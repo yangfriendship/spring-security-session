@@ -13,6 +13,7 @@ public class AppConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
+
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
@@ -26,7 +27,6 @@ public class AppConfig {
     @Bean
     public ObjectMapper objectMapper(){
         ObjectMapper objectMapper = new ObjectMapper();
-
         return objectMapper;
     }
 
