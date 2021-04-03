@@ -16,5 +16,7 @@ public class AccountContext extends User {
 
     public AccountContext(Account account, Collection<? extends GrantedAuthority> authorities) {
         super(account.getEmail(), account.getPassword(), authorities);
+        this.account = account;
+
     }
 }

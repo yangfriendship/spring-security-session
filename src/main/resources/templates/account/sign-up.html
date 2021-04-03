@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+</head>
+<body>
+
+    <form th:action="@{/sign-up}" method="post">
+        <input type="hidden" th:value="${_csrf}">
+        <input name="email" type="email">
+        <input name="password" type="password">
+        <input name="confirmPassword" type="password">
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

@@ -1,7 +1,8 @@
-package com.security.jwt.security;
+package com.security.jwt.security.session;
 
 import com.security.jwt.domain.Account;
 import com.security.jwt.repository.AccountRepository;
+import com.security.jwt.security.AccountContext;
 import com.sun.tools.javac.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,8 +11,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+// 시큐리티가 내부적으로 이미 userDetailsService 라는 이름의 빈을 생성하기 때문에
+// 직접 구현한 빈을 userDetailsService 에 이름을 지정해준다.
 @Component
+@Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
